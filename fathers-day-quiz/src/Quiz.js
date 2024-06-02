@@ -1,6 +1,6 @@
 // src/Quiz.js
 import React, { useState } from 'react';
-import { Container, Typography, Button, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel, Box } from '@mui/material';
+import { Container, Typography, Radio, RadioGroup, FormControlLabel, FormControl, Box } from '@mui/material';
 import questions from './questions';
 
 const Quiz = () => {
