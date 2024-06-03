@@ -1,17 +1,21 @@
 {
   "files": {
     "main.css": "/FathersDayQuiz/static/css/main.42ec57d7.css",
-    "main.js": "/FathersDayQuiz/static/js/main.8d0f9525.js",
+    "main.js": "/FathersDayQuiz/static/js/main.a9c8ca81.js",
     "static/js/453.df627859.chunk.js": "/FathersDayQuiz/static/js/453.df627859.chunk.js",
     "static/media/QuizCorner.png": "/FathersDayQuiz/static/media/QuizCorner.5d3c0d4067b1e76799de.png",
+    "static/media/DadImage1.jpg": "/FathersDayQuiz/static/media/DadImage1.28b8d97d007918c4b204.jpg",
+    "static/media/DadImage3.jpg": "/FathersDayQuiz/static/media/DadImage3.1da91acf10c9192d8fb3.jpg",
+    "static/media/DadImage4.jpg": "/FathersDayQuiz/static/media/DadImage4.7bc741b79ac9b841ee30.jpg",
+    "static/media/DadImage2.jpg": "/FathersDayQuiz/static/media/DadImage2.8864ed35e243d21d9033.jpg",
     "static/media/fathersDaySplash.jpg": "/FathersDayQuiz/static/media/fathersDaySplash.1c310f6fd788f835550c.jpg",
     "index.html": "/FathersDayQuiz/index.html",
     "main.42ec57d7.css.map": "/FathersDayQuiz/static/css/main.42ec57d7.css.map",
-    "main.8d0f9525.js.map": "/FathersDayQuiz/static/js/main.8d0f9525.js.map",
+    "main.a9c8ca81.js.map": "/FathersDayQuiz/static/js/main.a9c8ca81.js.map",
     "453.df627859.chunk.js.map": "/FathersDayQuiz/static/js/453.df627859.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.42ec57d7.css",
-    "static/js/main.8d0f9525.js"
+    "static/js/main.a9c8ca81.js"
   ]
 }
