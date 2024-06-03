@@ -3,6 +3,8 @@ import { Container, Typography, Box, LinearProgress } from '@mui/material';
 import questions from './questions';
 import Question from './Question';
 import SplashScreen from './SplashScreen';
+import quizCornerImage from './BackgroundImages/QuizCorner.png'; // Import the new image
+
 
 const getDadReference = (score) => {
   if (score <= 3) {
@@ -64,6 +66,9 @@ const Quiz = () => {
           </Typography>
         ) : (
           <>
+            <Box position="absolute" top={0} left={0} width="30%" >
+              <img src={quizCornerImage} alt="Quiz Corner" style={{ width: '100%', height: '100%' }} />
+            </Box>
             <LinearProgress variant="determinate" value={progress} />
             <Typography variant="body1" mt={2} mb={2}>
               Question {currentQuestion + 1} of {questions.length}
