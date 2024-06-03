@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/FathersDayQuiz/static/css/main.42ec57d7.css",
+    "main.js": "/FathersDayQuiz/static/js/main.accf0ae6.js",
+    "static/js/453.df627859.chunk.js": "/FathersDayQuiz/static/js/453.df627859.chunk.js",
+    "static/media/fathersDaySplash.jpg": "/FathersDayQuiz/static/media/fathersDaySplash.1c310f6fd788f835550c.jpg",
+    "index.html": "/FathersDayQuiz/index.html",
+    "main.42ec57d7.css.map": "/FathersDayQuiz/static/css/main.42ec57d7.css.map",
+    "main.accf0ae6.js.map": "/FathersDayQuiz/static/js/main.accf0ae6.js.map",
+    "453.df627859.chunk.js.map": "/FathersDayQuiz/static/js/453.df627859.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.42ec57d7.css",
+    "static/js/main.accf0ae6.js"
+  ]
+}
