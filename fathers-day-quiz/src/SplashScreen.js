@@ -22,25 +22,20 @@ const ContentBox = styled(Box)({
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  height: '90vh',
-  width: '70vw',
+  height: '100%',
+  width: '100%',
   padding: '0 20px', // Add some padding for better text visibility on small screens
   boxSizing: 'border-box', // Include padding and border in the element's total width and height
 });
 
 const CenteredText = styled(Typography)({
-  position: 'absolute',
-  top: '45%', // Adjust based on the position of the blue circle
-  left: '35%',
-  transform: 'translate(-50%, -50%)',
+  fontSize: '4vw', // Adjust based on viewport width
   color: '#0e111f', // Ensure the text is visible against the blue background
+  textAlign: 'center', // Center the text
+  marginBottom: '20px', // Add some space between the text and the button
 });
 
 const StartButton = styled(Button)({
-  position: 'absolute',
-  top: '55%', // Adjust based on the position of the blue circle
-  left: '35%',
-  transform: 'translate(-50%, -50%)',
   backgroundColor: '#235d27',
   color: '#fff',
   '&:hover': {

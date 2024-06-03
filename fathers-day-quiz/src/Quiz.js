@@ -1,8 +1,20 @@
 import React, { useState } from 'react';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography, Box, LinearProgress } from '@mui/material';
 import questions from './questions';
 import Question from './Question';
 import SplashScreen from './SplashScreen';
+
+const getDadReference = (score) => {
+  if (score <= 3) {
+    return "You are like Homer Simpson from The Simpsons. Not the best dad, but deep down you love your kids!";
+  } else if (score <= 7) {
+    return "You are like Danny Tanner from Full House. You're trying your best and always have your kids' best interests at heart!";
+  } else if (score <= 11) {
+    return "You are like Phil Dunphy from Modern Family. A good dad who is loving, supportive, and sometimes a bit goofy!";
+  } else {
+    return "You are like Mufasa from The Lion King. A super dad who is wise, noble, and a loving protector!";
+  }
+};
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -36,6 +48,8 @@ const Quiz = () => {
     setShowSplash(false);
   };
 
+  const progress = ((currentQuestion + 1) / questions.length) * 100;
+
   return (
     <Container maxWidth="sm">
       <Box mt={5}>
@@ -44,18 +58,29 @@ const Quiz = () => {
         ) : showScore ? (
           <Typography variant="h5">
             Congratulations! You've completed the quiz. You got {correctAnswers} out of {questions.length} correct. Happy Father's Day!
-          </Typography>
-        ) : feedback ? (
-          <Box>
-            <Typography variant="h6" color={feedback.isCorrect ? 'green' : 'red'}>
-              {feedback.isCorrect ? 'Correct!' : `Incorrect! The correct answer was: ${feedback.correctAnswer}`}
+            <Typography variant="h6" mt={2}>
+              {getDadReference(correctAnswers)}
             </Typography>
-          </Box>
+          </Typography>
         ) : (
-          <Question
-            question={questions[currentQuestion]}
-            handleAnswerOptionClick={handleAnswerOptionClick}
-          />
+          <>
+            <LinearProgress variant="determinate" value={progress} />
+            <Typography variant="body1" mt={2} mb={2}>
+              Question {currentQuestion + 1} of {questions.length}
+            </Typography>
+            {feedback ? (
+              <Box>
+                <Typography variant="h6" color={feedback.isCorrect ? 'green' : 'red'}>
+                  {feedback.isCorrect ? 'Correct!' : `Incorrect! The correct answer was: ${feedback.correctAnswer}`}
+                </Typography>
+              </Box>
+            ) : (
+              <Question
+                question={questions[currentQuestion]}
+                handleAnswerOptionClick={handleAnswerOptionClick}
+              />
+            )}
+          </>
         )}
       </Box>
     </Container>
