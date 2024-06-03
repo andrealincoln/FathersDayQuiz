@@ -1,6 +1,5 @@
-// src/Question.js
 import React from 'react';
-import { Typography, Radio, RadioGroup, FormControlLabel, FormControl, FormLabel } from '@mui/material';
+import { Typography, Radio, RadioGroup, FormControlLabel, FormControl } from '@mui/material';
 
 const Question = ({ question, handleAnswerOptionClick }) => {
   return (

@@ -8,6 +8,7 @@ const questions = [
       { answerText: '1941' },
       { answerText: '1942' },
     ],
+    correctAnswer: '1939',
   },
   {
     questionText: 'Which country was not part of the Axis powers?',
@@ -17,6 +18,7 @@ const questions = [
       { answerText: 'Japan' },
       { answerText: 'Soviet Union' },
     ],
+    correctAnswer: 'Soviet Union',
   },
   // Add more questions as needed
 ];

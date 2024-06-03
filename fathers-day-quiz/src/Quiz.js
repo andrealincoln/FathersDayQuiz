@@ -1,21 +1,33 @@
-// src/Quiz.js
 import React, { useState } from 'react';
-import { Container, Typography, Radio, RadioGroup, FormControlLabel, FormControl, Box } from '@mui/material';
+import { Container, Typography, Box } from '@mui/material';
 import questions from './questions';
+import Question from './Question';
 
 const Quiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState([]);
+  const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showScore, setShowScore] = useState(false);
+  const [feedback, setFeedback] = useState(null);
 
   const handleAnswerOptionClick = (answer) => {
-    setAnswers([...answers, answer]);
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
+    const isCorrect = answer === questions[currentQuestion].correctAnswer;
+    if (isCorrect) {
+      setCorrectAnswers(correctAnswers + 1);
     }
+    setFeedback({
+      isCorrect,
+      correctAnswer: questions[currentQuestion].correctAnswer
+    });
+
+    setTimeout(() => {
+      const nextQuestion = currentQuestion + 1;
+      if (nextQuestion < questions.length) {
+        setCurrentQuestion(nextQuestion);
+      } else {
+        setShowScore(true);
+      }
+      setFeedback(null);
+    }, 750); // 1/2 of a second
   };
 
   return (
@@ -23,24 +35,20 @@ const Quiz = () => {
       <Box mt={5}>
         <Typography variant="h4" gutterBottom>Father's Day Quiz</Typography>
         {showScore ? (
-          <Typography variant="h5">Congratulations! You've completed the quiz. Happy Father's Day!</Typography>
+          <Typography variant="h5">
+            Congratulations! You've completed the quiz. You got {correctAnswers} out of {questions.length} correct. Happy Father's Day!
+          </Typography>
+        ) : feedback ? (
+          <Box>
+            <Typography variant="h6" color={feedback.isCorrect ? 'green' : 'red'}>
+              {feedback.isCorrect ? 'Correct!' : `Incorrect! The correct answer was: ${feedback.correctAnswer}`}
+            </Typography>
+          </Box>
         ) : (
-          <>
-            <Typography variant="h6">{questions[currentQuestion].questionText}</Typography>
-            <FormControl component="fieldset">
-              <RadioGroup>
-                {questions[currentQuestion].answerOptions.map((answerOption) => (
-                  <FormControlLabel
-                    key={answerOption.answerText}
-                    value={answerOption.answerText}
-                    control={<Radio />}
-                    label={answerOption.answerText}
-                    onClick={() => handleAnswerOptionClick(answerOption.answerText)}
-                  />
-                ))}
-              </RadioGroup>
-            </FormControl>
-          </>
+          <Question
+            question={questions[currentQuestion]}
+            handleAnswerOptionClick={handleAnswerOptionClick}
+          />
         )}
       </Box>
     </Container>
