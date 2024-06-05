@@ -8,6 +8,7 @@ import dadImage1 from './BackgroundImages/DadImage1.jpg';
 import dadImage2 from './BackgroundImages/DadImage2.jpg';
 import dadImage3 from './BackgroundImages/DadImage3.jpg';
 import dadImage4 from './BackgroundImages/DadImage4.jpg';
+import humorousImage from './BackgroundImages/sillyDad.webp';
 
 
 const getDadReference = (score) => {
@@ -53,6 +54,13 @@ const ScoreDisplay = ({ correctAnswers, totalQuestions }) => {
         <img
           src={getDadImage(correctAnswers)}
           alt="Dad"
+          style={{ width: '200px', height: 'auto' }}
+        />
+      </Box>
+      <Box position="absolute" bottom={0} left={0} p={3}>
+        <img
+          src={humorousImage}
+          alt="Humorous"
           style={{ width: '200px', height: 'auto' }}
         />
       </Box>
